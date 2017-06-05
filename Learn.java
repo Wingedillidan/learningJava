@@ -49,7 +49,7 @@ public class Learn {
         int pivot = a[hi];
         int i = lo - 1;
 
-        for (int j = lo; j < hi - 1; j++) {
+        for (int j = lo; j < hi; j++) {
             if (a[j] <= pivot) {
                 i += 1;
 
@@ -58,10 +58,9 @@ public class Learn {
                 }
             }
         }
-        i += 1;
-        swap(a, i, hi);
+        swap(a, i+1, hi);
 
-        return i;
+        return i+1;
     }
 
     private static void printIntArray(int[] a) {
