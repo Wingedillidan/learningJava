@@ -41,6 +41,8 @@ public class Learn {
         int swap = a[i];
         a[i] = a[j];
         a[j] = swap;
+
+        System.out.println("Swapped " + a[i] + " and " + a[j]);
     }
 
     private static int partition(int[] a, int lo, int hi) {
@@ -63,14 +65,18 @@ public class Learn {
     }
 
     private static void printIntArray(int[] a) {
+        String result = "";
+
         for (int i: a) {
-            System.out.println(i);
+            result += i + ", ";
         }
+        System.out.println(result);
     }
 
     private static void quickSort(int[] a, int lo, int hi) {
         if (lo < hi) {
             int p = partition(a, lo, hi);
+            printIntArray(a);
             quickSort(a, lo, p - 1);
             quickSort(a, p+1, hi);
         }
